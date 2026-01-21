@@ -25,15 +25,9 @@ class AppKernel extends Kernel
      */
     private $configFiles = [];
 
-    /**
-     * @var string
-     */
-    private $cachePrefix = '';
-
     public function __construct($cachePrefix)
     {
         parent::__construct($cachePrefix, true);
-        $this->cachePrefix = $cachePrefix;
         $this->addBundle(FrameworkBundle::class);
         $this->addBundle(TwigBundle::class);
         $this->addBundle(HulutiBreadcrumbsBundle::class);

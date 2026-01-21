@@ -130,10 +130,6 @@ class BundleTest extends WebTestCase
 
     private function getContainerForTests(): ContainerInterface
     {
-        if (method_exists(WebTestCase::class, 'getContainer')) {
-            return static::getContainer();
-        }
-
-        return static::$container;
+        return static::getContainer();
     }
 }
