@@ -1,6 +1,6 @@
 <?php declare(strict_types = 1);
 
-namespace WhiteOctober\BreadcrumbsBundle\Test;
+namespace Huluti\BreadcrumbsBundle\Test;
 
 use Symfony\Contracts\Translation\TranslatorInterface;
 

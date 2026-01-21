@@ -1,16 +1,16 @@
 <?php
 
-namespace WhiteOctober\BreadcrumbsBundle\DependencyInjection;
+namespace Huluti\BreadcrumbsBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\PhpFileLoader;
 use Symfony\Component\Config\FileLocator;
 
-class WhiteOctoberBreadcrumbsExtension extends Extension
+class HulutiBreadcrumbsExtension extends Extension
 {
     /**
-     * Loads our service, accessible as "white_october_breadcrumbs"
+     * Loads our service, accessible as "huluti_breadcrumbs"
      *
      * @param  array            $configs
      * @param  ContainerBuilder $container
@@ -35,6 +35,6 @@ class WhiteOctoberBreadcrumbsExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
-        $container->setParameter("white_october_breadcrumbs.options", $config);
+        $container->setParameter("huluti_breadcrumbs.options", $config);
     }
 }

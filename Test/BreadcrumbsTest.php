@@ -1,17 +1,17 @@
 <?php declare(strict_types = 1);
 
-namespace WhiteOctober\BreadcrumbsBundle\Test;
+namespace Huluti\BreadcrumbsBundle\Test;
 
 use PHPUnit\Framework\Assert;
 use PHPUnit\Framework\TestCase;
-use WhiteOctober\BreadcrumbsBundle\Model\Breadcrumbs;
+use Huluti\BreadcrumbsBundle\Model\Breadcrumbs;
 
 final class BreadcrumbsTest extends TestCase
 {
 
     public function testBreadcrumbs(): void
     {
-        /** @var \WhiteOctober\BreadcrumbsBundle\Model\Breadcrumbs|\WhiteOctober\BreadcrumbsBundle\Model\SingleBreadcrumb[] $breadcrumbs */
+        /** @var \Huluti\BreadcrumbsBundle\Model\Breadcrumbs|\Huluti\BreadcrumbsBundle\Model\SingleBreadcrumb[] $breadcrumbs */
         $breadcrumbs = new Breadcrumbs();
         $breadcrumbs->addItem('FooBar');
 

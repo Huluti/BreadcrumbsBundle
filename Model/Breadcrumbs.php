@@ -1,6 +1,6 @@
 <?php
 
-namespace WhiteOctober\BreadcrumbsBundle\Model;
+namespace Huluti\BreadcrumbsBundle\Model;
 
 use Symfony\Component\Routing\RouterInterface;
 
@@ -166,7 +166,7 @@ class Breadcrumbs implements \Iterator, \ArrayAccess, \Countable
     }
 
     /**
-     * @return \WhiteOctober\BreadcrumbsBundle\Model\SingleBreadcrumb[]
+     * @return \Huluti\BreadcrumbsBundle\Model\SingleBreadcrumb[]
      */
     public function getNamespaceBreadcrumbs($namespace = self::DEFAULT_NAMESPACE)
     {

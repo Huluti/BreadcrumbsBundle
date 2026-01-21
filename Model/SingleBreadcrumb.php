@@ -1,6 +1,6 @@
 <?php
 
-namespace WhiteOctober\BreadcrumbsBundle\Model;
+namespace Huluti\BreadcrumbsBundle\Model;
 
 class SingleBreadcrumb
 {

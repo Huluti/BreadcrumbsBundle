@@ -1,4 +1,4 @@
-_This is a fork of [whiteoctober/BreadcrumbsBundle](https://github.com/whiteoctober/BreadcrumbsBundle) maintained for newer Symfony versions. See [whiteoctober/BreadcrumbsBundle#106](https://github.com/whiteoctober/BreadcrumbsBundle/issues/106)._
+_This is a fork of [mhujer/BreadcrumbsBundle](https://github.com/mhujer/BreadcrumbsBundle) maintained for newer Symfony versions.
 
 Installation
 ============
@@ -6,7 +6,7 @@ Installation
 1. Install this bundle using [Composer](https://getcomposer.org/):
     
     ``` bash
-    composer require mhujer/breadcrumbs-bundle
+    composer require huluti/breadcrumbs-bundle
     ```
 
 If you're using Symfony Flex, the following steps will be done automatically.
@@ -18,15 +18,15 @@ If you're using Symfony Flex, the following steps will be done automatically.
 
 return [
     // ...
-    WhiteOctober\BreadcrumbsBundle\WhiteOctoberBreadcrumbsBundle::class => ['all' => true],
+    Huluti\BreadcrumbsBundle\HulutiBreadcrumbsBundle::class => ['all' => true],
 ];
 ```
 
-3. Configure the bundle in `config/packages/white_october_breadcrumbs.yaml`:
+3. Configure the bundle in `config/packages/huluti_breadcrumbs.yaml`:
     
     ``` yaml
-    # config/packages/white_october_breadcrumbs.yaml
-    white_october_breadcrumbs: ~
+    # config/packages/huluti_breadcrumbs.yaml
+    huluti_breadcrumbs: ~
     ```
   
 That's it for basic configuration. For more options check the [Configuration](#configuration) section.
@@ -39,7 +39,7 @@ In your application controller methods:
 ``` php
 public function yourAction(User $user)
 {
-    $breadcrumbs = $this->get("white_october_breadcrumbs");
+    $breadcrumbs = $this->get("huluti_breadcrumbs");
     
     // Simple example
     $breadcrumbs->addItem("Home", $this->get("router")->generate("index"));
@@ -56,7 +56,7 @@ It is preferable, that you don't retrieve the service via `get`. Use
 [dependency injection](https://symfony.com/doc/current/service_container.html#fetching-and-using-services) instead:
                                                               
 ```php
-use WhiteOctober\BreadcrumbsBundle\Model\Breadcrumbs;
+use Huluti\BreadcrumbsBundle\Model\Breadcrumbs;
 
 class YourController extends AbstractController
 {
@@ -86,7 +86,7 @@ a product catalog:
 ``` php
 public function yourAction(Category $category)
 {
-    $breadcrumbs = $this->get("white_october_breadcrumbs");
+    $breadcrumbs = $this->get("huluti_breadcrumbs");
 
     $node = $category;
 
@@ -105,7 +105,7 @@ and `prependRouteItem()` methods:
 ``` php
 public function yourAction()
 {
-    $breadcrumbs = $this->get("white_october_breadcrumbs");
+    $breadcrumbs = $this->get("huluti_breadcrumbs");
     
     // Pass "_demo" route name without any parameters
     $breadcrumbs->addRouteItem("Demo", "_demo");
@@ -123,11 +123,11 @@ public function yourAction()
 Configuration
 =============
 
-The following *default* parameters can be overridden in your `config/packages/white_october_breadcrumbs.yaml`:
+The following *default* parameters can be overridden in your `config/packages/huluti_breadcrumbs.yaml`:
 
 ``` yaml
-# config/packages/white_october_breadcrumbs.yaml
-white_october_breadcrumbs:
+# config/packages/huluti_breadcrumbs.yaml
+huluti_breadcrumbs:
     separator:          '/'
     separatorClass:     'separator'
     listId:             'wo-breadcrumbs'
@@ -136,7 +136,7 @@ white_october_breadcrumbs:
     linkRel:            ''
     locale:             ~ # defaults to null, so the default locale is used
     translation_domain: ~ # defaults to null, so the default domain is used
-    viewTemplate:       '@WhiteOctoberBreadcrumbs/microdata.html.twig'
+    viewTemplate:       '@HulutiBreadcrumbs/microdata.html.twig'
 ```
 
 These can also be passed as parameters in the view when rendering the
@@ -154,7 +154,7 @@ or `addNamespaceRouteItem` / `prependNamespaceRouteItem` methods respectively, f
 ``` php
 public function yourAction(User $user)
 {
-    $breadcrumbs = $this->get("white_october_breadcrumbs");
+    $breadcrumbs = $this->get("huluti_breadcrumbs");
 
     // Simple example
     $breadcrumbs->prependNamespaceItem("subsection", "Home", $this->get("router")->generate("index"));
@@ -224,17 +224,17 @@ There are two methods for doing this.
 
 1. You can override the template used by copying the
     `Resources/views/microdata.html.twig` file out of the bundle and placing it
-    into `<your-project>/templates/bundles/WhiteOctoberBreadcrumbsBundle`, then customising
+    into `<your-project>/templates/bundles/HulutiBreadcrumbsBundle`, then customising
     as you see fit. Check the [Overriding bundle templates][1] documentation section
     for more information.
 
 2. Use the `viewTemplate` configuration parameter:
     
     ``` jinja
-    {{ wo_render_breadcrumbs({ viewTemplate: "@WhiteOctoberBreadcrumbs/yourBreadcrumbs.html.twig" }) }}
+    {{ wo_render_breadcrumbs({ viewTemplate: "@HulutiBreadcrumbs/yourBreadcrumbs.html.twig" }) }}
     ```
 > **NOTE:** If you want to use the JSON-LD format, there's already an existing template 
-at `@WhiteOctoberBreadcrumbs/json-ld.html.twig`. Just set this template as the value for 
+at `@HulutiBreadcrumbs/json-ld.html.twig`. Just set this template as the value for 
 `viewTemplate` either in your Twig function call (see Step 2 above) or in your bundle [configuration](#configuration).
 
 
@@ -247,7 +247,7 @@ Contributing
 
 We welcome contributions to this project, including pull requests and issues (and discussions on existing issues).
 
-If you'd like to contribute code but aren't sure what, the [issues list](https://github.com/mhujer/breadcrumbsbundle/issues) is a good place to start.
+If you'd like to contribute code but aren't sure what, the [issues list](https://github.com/Huluti/breadcrumbsbundle/issues) is a good place to start.
 If you're a first-time code contributor, you may find Github's guide to [forking projects](https://guides.github.com/activities/forking/) helpful.
 
 All contributors (whether contributing code, involved in issue discussions, or involved in any other way) must abide by our [code of conduct](https://github.com/whiteoctober/open-source-code-of-conduct/blob/master/code_of_conduct.md).

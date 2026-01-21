@@ -1,9 +1,9 @@
 <?php
 
-namespace WhiteOctober\BreadcrumbsBundle;
+namespace Huluti\BreadcrumbsBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class WhiteOctoberBreadcrumbsBundle extends Bundle
+class HulutiBreadcrumbsBundle extends Bundle
 {
 }

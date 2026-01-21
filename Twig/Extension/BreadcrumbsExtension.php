@@ -1,13 +1,13 @@
 <?php
 
-namespace WhiteOctober\BreadcrumbsBundle\Twig\Extension;
+namespace Huluti\BreadcrumbsBundle\Twig\Extension;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFilter;
 use Twig\TwigFunction;
-use WhiteOctober\BreadcrumbsBundle\Model\Breadcrumbs;
-use WhiteOctober\BreadcrumbsBundle\Model\SingleBreadcrumb;
+use Huluti\BreadcrumbsBundle\Model\Breadcrumbs;
+use Huluti\BreadcrumbsBundle\Model\SingleBreadcrumb;
 
 /**
  * Provides an extension for Twig to output breadcrumbs
@@ -20,7 +20,7 @@ class BreadcrumbsExtension extends AbstractExtension
     public function __construct(ContainerInterface $container)
     {
         $this->container = $container;
-        $this->breadcrumbs = $container->get("white_october_breadcrumbs");
+        $this->breadcrumbs = $container->get("huluti_breadcrumbs");
     }
 
     public function getFunctions(): array
@@ -43,7 +43,7 @@ class BreadcrumbsExtension extends AbstractExtension
      * Returns the breadcrumbs object
      *
      * @param string $namespace
-     * @return \WhiteOctober\BreadcrumbsBundle\Model\Breadcrumbs
+     * @return \Huluti\BreadcrumbsBundle\Model\Breadcrumbs
      */
     public function getBreadcrumbs($namespace = Breadcrumbs::DEFAULT_NAMESPACE)
     {
@@ -67,7 +67,7 @@ class BreadcrumbsExtension extends AbstractExtension
      */
     public function renderBreadcrumbs(array $options = array())
     {
-        return $this->container->get("white_october_breadcrumbs.helper")->breadcrumbs($options);
+        return $this->container->get("huluti_breadcrumbs.helper")->breadcrumbs($options);
     }
 
     /**

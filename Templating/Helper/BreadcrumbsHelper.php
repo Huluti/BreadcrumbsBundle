@@ -1,9 +1,9 @@
 <?php
 
-namespace WhiteOctober\BreadcrumbsBundle\Templating\Helper;
+namespace Huluti\BreadcrumbsBundle\Templating\Helper;
 
 use Twig\Environment;
-use WhiteOctober\BreadcrumbsBundle\Model\Breadcrumbs;
+use Huluti\BreadcrumbsBundle\Model\Breadcrumbs;
 
 class BreadcrumbsHelper
 {
@@ -24,7 +24,7 @@ class BreadcrumbsHelper
 
     /**
      * @param \Twig\Environment $twig
-     * @param \WhiteOctober\BreadcrumbsBundle\Model\Breadcrumbs $breadcrumbs
+     * @param \Huluti\BreadcrumbsBundle\Model\Breadcrumbs $breadcrumbs
      * @param array $options The default options load from config file
      */
     public function __construct(Environment $twig, Breadcrumbs $breadcrumbs, array $options)

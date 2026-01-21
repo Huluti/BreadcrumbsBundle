@@ -1,12 +1,12 @@
 <?php
-namespace WhiteOctober\BreadcrumbsBundle\Test;
+namespace Huluti\BreadcrumbsBundle\Test;
 
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Bundle\TwigBundle\TwigBundle;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Kernel;
-use WhiteOctober\BreadcrumbsBundle\WhiteOctoberBreadcrumbsBundle;
+use Huluti\BreadcrumbsBundle\HulutiBreadcrumbsBundle;
 
 /**
  * Class AppKernel
@@ -35,7 +35,7 @@ class AppKernel extends Kernel
         $this->cachePrefix = $cachePrefix;
         $this->addBundle(FrameworkBundle::class);
         $this->addBundle(TwigBundle::class);
-        $this->addBundle(WhiteOctoberBreadcrumbsBundle::class);
+        $this->addBundle(HulutiBreadcrumbsBundle::class);
         $this->addConfigFile(__DIR__.'/config.xml');
     }
 

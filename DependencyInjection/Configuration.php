@@ -1,6 +1,6 @@
 <?php
 
-namespace WhiteOctober\BreadcrumbsBundle\DependencyInjection;
+namespace Huluti\BreadcrumbsBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -14,7 +14,7 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder(): TreeBuilder
     {
-        $treeBuilder = new TreeBuilder("white_october_breadcrumbs");
+        $treeBuilder = new TreeBuilder("huluti_breadcrumbs");
 
         $rootNode = $treeBuilder->getRootNode();
 
@@ -28,7 +28,7 @@ class Configuration implements ConfigurationInterface
                 scalarNode("linkRel")->defaultValue("")->end()->
                 scalarNode("locale")->defaultNull()->end()->
                 scalarNode("translation_domain")->defaultNull()->end()->
-                scalarNode("viewTemplate")->defaultValue("@WhiteOctoberBreadcrumbs/microdata.html.twig")->end()->
+                scalarNode("viewTemplate")->defaultValue("@HulutiBreadcrumbs/microdata.html.twig")->end()->
             end()
         ;
 

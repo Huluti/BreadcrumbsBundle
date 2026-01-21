@@ -6,6 +6,6 @@
         <framework:router resource=""></framework:router>
     </framework:config>
     <services>
-        <service id="translator" class="\WhiteOctober\BreadcrumbsBundle\Test\DummyTranslator" public="true"/>
+        <service id="translator" class="\Huluti\BreadcrumbsBundle\Test\DummyTranslator" public="true"/>
     </services>
 </container>

@@ -12,10 +12,10 @@ class BundleTest extends \Symfony\Bundle\FrameworkBundle\Test\WebTestCase
         $container = $client->getContainer();
 
         // Test if the service exists
-        self::assertTrue($container->has('white_october_breadcrumbs.helper'));
+        self::assertTrue($container->has('huluti_breadcrumbs.helper'));
 
-        $service = $container->get('white_october_breadcrumbs.helper');
-        self::assertInstanceOf(\WhiteOctober\BreadcrumbsBundle\Templating\Helper\BreadcrumbsHelper::class, $service);
+        $service = $container->get('huluti_breadcrumbs.helper');
+        self::assertInstanceOf(\Huluti\BreadcrumbsBundle\Templating\Helper\BreadcrumbsHelper::class, $service);
     }
 
     public function testRendering()
@@ -24,12 +24,12 @@ class BundleTest extends \Symfony\Bundle\FrameworkBundle\Test\WebTestCase
 
         $container = $client->getContainer();
 
-        /** @var \WhiteOctober\BreadcrumbsBundle\Model\Breadcrumbs $service */
-        $service = $this->getContainerForTests()->get(WhiteOctober\BreadcrumbsBundle\Model\Breadcrumbs::class);
+        /** @var \Huluti\BreadcrumbsBundle\Model\Breadcrumbs $service */
+        $service = $this->getContainerForTests()->get(Huluti\BreadcrumbsBundle\Model\Breadcrumbs::class);
         $service->addItem('foo');
 
-        /** @var \WhiteOctober\BreadcrumbsBundle\Twig\Extension\BreadcrumbsExtension $breadcrumbsExtension */
-        $breadcrumbsExtension = $container->get('white_october_breadcrumbs.twig');
+        /** @var \Huluti\BreadcrumbsBundle\Twig\Extension\BreadcrumbsExtension $breadcrumbsExtension */
+        $breadcrumbsExtension = $container->get('huluti_breadcrumbs.twig');
 
         self::assertStringEqualsStringIgnoringLineEndings(
 <<<'EOD'
@@ -52,12 +52,12 @@ EOD,
 
         $container = $client->getContainer();
 
-        /** @var \WhiteOctober\BreadcrumbsBundle\Model\Breadcrumbs $service */
-        $service = $this->getContainerForTests()->get(WhiteOctober\BreadcrumbsBundle\Model\Breadcrumbs::class);
+        /** @var \Huluti\BreadcrumbsBundle\Model\Breadcrumbs $service */
+        $service = $this->getContainerForTests()->get(Huluti\BreadcrumbsBundle\Model\Breadcrumbs::class);
         $service->addItem('foo', '', ['name' => 'John']);
 
-        /** @var \WhiteOctober\BreadcrumbsBundle\Twig\Extension\BreadcrumbsExtension $breadcrumbsExtension */
-        $breadcrumbsExtension = $container->get('white_october_breadcrumbs.twig');
+        /** @var \Huluti\BreadcrumbsBundle\Twig\Extension\BreadcrumbsExtension $breadcrumbsExtension */
+        $breadcrumbsExtension = $container->get('huluti_breadcrumbs.twig');
 
         self::assertStringEqualsStringIgnoringLineEndings(
 <<<'EOD'
@@ -71,7 +71,7 @@ EOD,
 
 EOD,
             $breadcrumbsExtension->renderBreadcrumbs([
-                'viewTemplate' => '@WhiteOctoberBreadcrumbs/microdata.html.twig'
+                'viewTemplate' => '@HulutiBreadcrumbs/microdata.html.twig'
             ])
         );
     }
@@ -82,13 +82,13 @@ EOD,
 
         $container = $client->getContainer();
 
-        /** @var \WhiteOctober\BreadcrumbsBundle\Model\Breadcrumbs $service */
-        $service = $this->getContainerForTests()->get(WhiteOctober\BreadcrumbsBundle\Model\Breadcrumbs::class);
+        /** @var \Huluti\BreadcrumbsBundle\Model\Breadcrumbs $service */
+        $service = $this->getContainerForTests()->get(Huluti\BreadcrumbsBundle\Model\Breadcrumbs::class);
         $service->addItem('foo');
         $service->addItem('bar', '', ['name' => 'John']);
 
-        /** @var \WhiteOctober\BreadcrumbsBundle\Twig\Extension\BreadcrumbsExtension $breadcrumbsExtension */
-        $breadcrumbsExtension = $container->get('white_october_breadcrumbs.twig');
+        /** @var \Huluti\BreadcrumbsBundle\Twig\Extension\BreadcrumbsExtension $breadcrumbsExtension */
+        $breadcrumbsExtension = $container->get('huluti_breadcrumbs.twig');
 
         self::assertStringEqualsStringIgnoringLineEndings(
             <<<'EOD'
@@ -108,7 +108,7 @@ EOD,
 
 EOD,
             $breadcrumbsExtension->renderBreadcrumbs([
-                'viewTemplate' => '@WhiteOctoberBreadcrumbs/microdata.html.twig',
+                'viewTemplate' => '@HulutiBreadcrumbs/microdata.html.twig',
                 'translation_domain' => 'admin',
             ])
         );
@@ -125,6 +125,6 @@ EOD,
 
     public static function getKernelClass(): string
     {
-        return \WhiteOctober\BreadcrumbsBundle\Test\AppKernel::class;
+        return \Huluti\BreadcrumbsBundle\Test\AppKernel::class;
     }
 }
