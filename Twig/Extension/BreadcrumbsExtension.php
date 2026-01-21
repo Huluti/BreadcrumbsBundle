@@ -26,16 +26,16 @@ class BreadcrumbsExtension extends AbstractExtension
     public function getFunctions(): array
     {
         return [
-            new TwigFunction('wo_breadcrumbs', [$this, 'getBreadcrumbs']),
-            new TwigFunction('wo_breadcrumbs_exists', [$this, 'hasBreadcrumbs']),
-            new TwigFunction('wo_render_breadcrumbs', [$this, 'renderBreadcrumbs'], ['is_safe' => ['html']]),
+            new TwigFunction('wo_breadcrumbs', $this->getBreadcrumbs(...)),
+            new TwigFunction('wo_breadcrumbs_exists', $this->hasBreadcrumbs(...)),
+            new TwigFunction('wo_render_breadcrumbs', $this->renderBreadcrumbs(...), ['is_safe' => ['html']]),
         ];
     }
 
     public function getFilters(): array
     {
         return [
-            new TwigFilter('wo_is_final_breadcrumb', [$this, 'isLastBreadcrumb']),
+            new TwigFilter('wo_is_final_breadcrumb', $this->isLastBreadcrumb(...)),
         ];
     }
 

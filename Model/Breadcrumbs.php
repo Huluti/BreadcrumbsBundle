@@ -148,7 +148,7 @@ class Breadcrumbs implements \Iterator, \ArrayAccess, \Countable
 
     public function clear($namespace = '')
     {
-        if (strlen($namespace)) {
+        if (strlen((string) $namespace)) {
             $this->breadcrumbs[$namespace] = [];
         } else {
             $this->breadcrumbs = [
@@ -307,7 +307,7 @@ class Breadcrumbs implements \Iterator, \ArrayAccess, \Countable
             return $argument($object);
         }
 
-        $getter = 'get'.ucfirst($argument);
+        $getter = 'get'.ucfirst((string) $argument);
         if (method_exists($object, $getter)) {
             return call_user_func([&$object, $getter], $getter);
         }
