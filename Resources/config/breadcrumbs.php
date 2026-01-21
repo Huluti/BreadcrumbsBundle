@@ -33,5 +33,6 @@ return static function (ContainerConfigurator $container): void {
     $services->set('huluti_breadcrumbs.twig', BreadcrumbsExtension::class)
         ->public()
         ->args([service('service_container')])
-        ->tag('twig.extension');
+        ->tag('twig.extension')
+    ;
 };
