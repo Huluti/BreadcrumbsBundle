@@ -11,6 +11,12 @@ jobs:
         php: ['8.2', '8.3', '8.4', '8.5']
         symfony: ['7.4.*', '8.0.*']
         deps: ['', '--prefer-lowest']
+        exclude:
+          # Symfony 8 requires PHP >= 8.4
+          - php: '8.2'
+            symfony: '8.0.*'
+          - php: '8.3'
+            symfony: '8.0.*'
 
     name: PHP ${{ matrix.php }} – Symfony ${{ matrix.symfony }} ${{ matrix.deps }}
 
@@ -26,7 +32,9 @@ jobs:
           ini-values: memory_limit=-1
 
       - name: Configure Symfony version
-        run: composer require --no-update symfony/framework-bundle=${{ matrix.symfony }} symfony/twig-bundle=${{ matrix.symfony }}
+        run: composer require --no-update \
+          symfony/framework-bundle=${{ matrix.symfony }} \
+          symfony/twig-bundle=${{ matrix.symfony }}
 
       - name: Install dependencies
         run: composer update --no-interaction --no-progress --prefer-dist ${{ matrix.deps }}
