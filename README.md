@@ -1,5 +1,11 @@
 _This is a fork of [mhujer/BreadcrumbsBundle](https://github.com/mhujer/BreadcrumbsBundle) maintained for newer Symfony versions.
 
+Requirements
+=======
+
+- PHP 8.2 or higher
+- Symfony 7.4 or higher
+
 Installation
 ============
 
