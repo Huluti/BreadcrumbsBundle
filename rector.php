@@ -6,9 +6,10 @@ use Rector\Config\RectorConfig;
 
 return RectorConfig::configure()
     ->withPaths([
-        __DIR__
+        __DIR__,
     ])
     ->withSkip([
-        __DIR__ . '/vendor',
+        __DIR__.'/vendor',
     ])
-    ->withPhpSets();
+    ->withPhpSets()
+;

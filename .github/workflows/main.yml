@@ -41,3 +41,9 @@ jobs:
 
       - name: Run tests
         run: vendor/bin/phpunit
+
+      - name: Check linting
+        run: make lint_ci
+
+      - name: Analyze code
+        run: make analyze_ci
