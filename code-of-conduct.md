@@ -1,1 +1,1 @@
-This project's code-of-conduct can be found at [https://github.com/huluti/open-source-code-of-conduct/blob/master/code_of_conduct.md](https://github.com/Huluti/open-source-code-of-conduct/blob/master/code_of_conduct.md).
+This project's code-of-conduct can be found at [https://github.com/huluti/open-source-code-of-conduct/blob/main/code_of_conduct.md](https://github.com/Huluti/open-source-code-of-conduct/blob/main/code_of_conduct.md).

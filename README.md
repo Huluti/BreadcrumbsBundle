@@ -256,4 +256,4 @@ We welcome contributions to this project, including pull requests and issues (an
 If you'd like to contribute code but aren't sure what, the [issues list](https://github.com/Huluti/breadcrumbsbundle/issues) is a good place to start.
 If you're a first-time code contributor, you may find Github's guide to [forking projects](https://guides.github.com/activities/forking/) helpful.
 
-All contributors (whether contributing code, involved in issue discussions, or involved in any other way) must abide by our [code of conduct](https://github.com/whiteoctober/open-source-code-of-conduct/blob/master/code_of_conduct.md).
+All contributors (whether contributing code, involved in issue discussions, or involved in any other way) must abide by our [code of conduct](https://github.com/Huluti/open-source-code-of-conduct/blob/main/code_of_conduct.md).
