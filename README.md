@@ -1,5 +1,11 @@
 _This is a fork of [mhujer/BreadcrumbsBundle](https://github.com/mhujer/BreadcrumbsBundle), maintained for newer Symfony versions. The original bundle itself is a fork of [sampart/BreadcrumbsBundle](https://github.com/sampart/BreadcrumbsBundle)._
 
+![Packagist Version](https://img.shields.io/packagist/v/huluti/breadcrumbs-bundle)
+
+## Goal
+
+This bundle provides an easy and flexible way to manage **breadcrumbs** in Symfony applications. It allows developers to dynamically build breadcrumbs for controllers and templates.
+
 Requirements
 =======
 
