@@ -46,5 +46,6 @@ return static function (ContainerConfigurator $container): void {
                 service(Breadcrumbs::class),
                 service('router'),
             ]
-        );
+        )
+    ;
 };
