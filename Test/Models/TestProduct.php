@@ -8,6 +8,7 @@ class TestProduct
     private float $price;
     private ?TestCategory $category;
     private ?TestSupplier $supplier;
+    /** @phpstan-ignore-next-line   */
     private $nullValue;
 
     public function __construct(string $name, float $price, ?TestCategory $category = null, ?TestSupplier $supplier = null)
