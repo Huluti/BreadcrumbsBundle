@@ -49,10 +49,10 @@ Usage
 In your application controller methods:
 
 ``` php
-public function yourAction(User $user)
+use Huluti\BreadcrumbsBundle\Model\Breadcrumbs;
+
+public function yourAction(User $user, Breadcrumbs $breadcrumbs)
 {
-    $breadcrumbs = $this->get("huluti_breadcrumbs");
-    
     // Simple example
     $breadcrumbs->addItem("Home", $this->get("router")->generate("index"));
 
@@ -80,23 +80,6 @@ class Controller extends AbstractController{
     }
 }
 ```
-
-
-It is preferable, that you don't retrieve the service via `get`. Use 
-[dependency injection](https://symfony.com/doc/current/service_container.html#fetching-and-using-services) instead:
-                                                              
-```php
-use Huluti\BreadcrumbsBundle\Model\Breadcrumbs;
-
-class YourController extends AbstractController
-{
-    public function yourAction(Breadcrumbs $breadcrumbs)
-    {
-      // ...
-    }
-}
-```
- 
 
 Then, in your template:
 
