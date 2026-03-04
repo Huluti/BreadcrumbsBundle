@@ -28,6 +28,13 @@
             <tag name="twig.extension" />
         </service>
 
+        <service id="huluti_breadcrumbs.listener" class="WhiteOctober\BreadcrumbsBundle\EventListener\BreadcrumbListener">
+            <tag name="kernel.event_listener" event="kernel.controller_arguments" method="onKernelController"
+                 priority="-1"/>
+            <argument type="service" id="WhiteOctober\BreadcrumbsBundle\Model\Breadcrumbs"/>
+            <argument type="service" id="router"/>
+        </service>
+
     </services>
 
 </container>

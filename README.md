@@ -64,6 +64,24 @@ public function yourAction(User $user)
 }
 ```
 
+or with attributes and [PropertyAccess Component](https://symfony.com/doc/current/components/property_access.html)
+
+```php
+use Huluti\BreadcrumbsBundle\Attribute\Breadcrumb;
+
+#[Breadcrumb(text: 'firstBreadcrumb', route: 'app_main')]
+class Controller extends AbstractController{
+    
+    #[Breadcrumb(text: 'nextBreadcrumb', route: 'app_main')]
+    #[Breadcrumb(text: 'nextBreadcrumb', url: '/')]
+    #[Breadcrumb(text: 'nextBreadcrumb  {user.name} in {category.name}', route: 'app_main', parameters: ['id' => '{user.id}', 'category' => '{category.name}'])]
+    public function yourAction(User $user, Category $category)
+    {
+    }
+}
+```
+
+
 It is preferable, that you don't retrieve the service via `get`. Use 
 [dependency injection](https://symfony.com/doc/current/service_container.html#fetching-and-using-services) instead:
                                                               
