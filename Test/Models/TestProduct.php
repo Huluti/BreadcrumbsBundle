@@ -8,6 +8,7 @@ class TestProduct
     private float $price;
     private ?TestCategory $category;
     private ?TestSupplier $supplier;
+
     /** @phpstan-ignore-next-line   */
     private $nullValue;
 
